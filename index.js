@@ -1,11 +1,13 @@
 import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import dotenv from "dotenv"
+dotenv.config(); 
 
 const s3Client = new S3Client({
   region: "ap-south-1",
   credentials: {
-    accessKeyId: "AKIAT4AZLR4FLHSFSRQO",
-    secretAccessKey: "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",
+    accessKeyId: process.env.ACCESS_KEY,
+    secretAccessKey: process.env.SECRET_ACCESS_KEY,
   },
 });
 
